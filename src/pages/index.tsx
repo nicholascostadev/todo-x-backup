@@ -7,7 +7,5 @@ const Wrapper = styled.div`
 `
 
 export default function Home() {
-  return <Wrapper>
-    Hello World
-  </Wrapper>
+  return <Wrapper>Hello World</Wrapper>
 }
