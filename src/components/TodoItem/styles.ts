@@ -20,3 +20,12 @@ export const TrashButton = styled.button`
   background: transparent;
   cursor: pointer;
 `
+
+type TodoTextProps = {
+  done?: boolean
+}
+
+export const TodoText = styled.p<TodoTextProps>`
+  text-decoration: ${({ done }) => (done ? 'line-through' : 'none')};
+  cursor: pointer;
+`
