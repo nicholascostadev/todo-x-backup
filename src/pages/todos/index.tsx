@@ -1,6 +1,9 @@
+import dynamic from 'next/dynamic'
 import { Header } from '../../components/Header'
-import { Todos } from '../../components/Todos'
 import { Container } from './styles'
+const Todos = dynamic(() => import('../../components/Todos'), {
+  ssr: false,
+})
 
 export default function TodosPage() {
   return (
