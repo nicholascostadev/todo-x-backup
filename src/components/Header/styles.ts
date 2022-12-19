@@ -15,16 +15,16 @@ export const Container = styled.div`
 
     color: white;
 
-      @media (max-width: 768px) {
-        padding: 0 1rem;
-      }
+    @media (max-width: 768px) {
+      padding: 0 1rem;
+    }
   }
 `
 
 export const ProfileButton = styled.button`
   height: 46px;
   width: 46px;
-  border-radius: 9999999px;
+  border-radius: ${({ theme }) => theme.rounded.full};
 
   border: 0;
   background: none;
@@ -33,6 +33,6 @@ export const ProfileButton = styled.button`
   > img {
     max-width: 100%;
     max-height: 100%;
-    border-radius: 99999999px;
+    border-radius: ${({ theme }) => theme.rounded.full};
   }
 `

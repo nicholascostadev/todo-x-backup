@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { Container, ProfileButton } from './styles'
 
 export const Header = () => {
