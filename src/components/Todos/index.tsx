@@ -1,6 +1,7 @@
 import { FormEvent, useState } from 'react'
 import { useTodosStore } from '../../store/useTodos'
-import { Container, Input } from './styles'
+import { TodoItem } from '../TodoItem'
+import { Container, Input, TodosContainer } from './styles'
 
 export default function Todos() {
   const [newTodo, setNewTodo] = useState('')
@@ -11,7 +12,10 @@ export default function Todos() {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
+
     addTodo(newTodo)
+
+    setNewTodo('')
   }
 
   return (
@@ -20,17 +24,18 @@ export default function Todos() {
         <Input
           type="text"
           placeholder="Começar uma nova tarefa"
+          value={newTodo}
           onChange={(e) => setNewTodo(e.target.value)}
         />
       </form>
 
-      <div>
+      <TodosContainer>
         <ul>
           {todos?.map((todo) => (
-            <li key={todo.id}>{todo.text}</li>
+            <TodoItem key={todo.id} todoId={todo.id} todoText={todo.text} />
           ))}
         </ul>
-      </div>
+      </TodosContainer>
     </Container>
   )
 }

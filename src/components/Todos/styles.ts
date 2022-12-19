@@ -15,3 +15,7 @@ export const Input = styled.input`
     color: ${({ theme }) => theme.colors.gray400};
   }
 `
+
+export const TodosContainer = styled.div`
+  margin-top: 1rem;
+`
