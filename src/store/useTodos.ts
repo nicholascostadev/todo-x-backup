@@ -10,14 +10,17 @@ type Todo = {
 
 type TodosStore = {
   todos: Todo[]
+  doneTodos: Todo[]
   addTodo: (todo: Todo['text']) => void
   deleteTodo: (todoId: Todo['id']) => void
+  toggleTodoDoneState: (todoId: Todo['id']) => void
 }
 
 export const useTodosStore = create(
   persist<TodosStore>(
     (set) => ({
       todos: [],
+      doneTodos: [],
       addTodo: (todo) => {
         set((state) => ({
           todos: [
@@ -30,6 +33,26 @@ export const useTodosStore = create(
         set((state) => ({
           todos: state.todos.filter((todo) => todo.id !== todoId),
         }))
+      },
+      toggleTodoDoneState: (todoId) => {
+        set((state) => {
+          const todoToUndo = state.doneTodos.find((todo) => todo.id === todoId)
+          if (todoToUndo) {
+            return {
+              doneTodos: state.doneTodos.filter((todo) => todo.id !== todoId),
+              todos: [...state.todos, todoToUndo],
+            }
+          }
+
+          const doneTodo = state.todos.find((todo) => todo.id === todoId)
+
+          if (!doneTodo) return state
+
+          return {
+            doneTodos: [...state.doneTodos, doneTodo],
+            todos: state.todos.filter((todo) => todo.id !== todoId),
+          }
+        })
       },
     }),
     {

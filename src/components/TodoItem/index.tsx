@@ -8,12 +8,22 @@ type TodoItemProps = {
   todoId: string
 }
 export const TodoItem = ({ todoText, todoId }: TodoItemProps) => {
-  const [done, setDone] = useState(false)
   const deleteTodo = useTodosStore((state) => state.deleteTodo)
+  const doneTodos = useTodosStore((state) => state.doneTodos)
+  const toggleTodoDoneState = useTodosStore(
+    (state) => state.toggleTodoDoneState,
+  )
+
+  const done = doneTodos.findIndex((todo) => todo.id === todoId) !== -1
 
   const handleDeleteTodo = (todoId: string) => () => {
     deleteTodo(todoId)
   }
+
+  const handleToggleTodoState = (todoId: string) => () => {
+    toggleTodoDoneState(todoId)
+  }
+
   return (
     <ListItem>
       <input
@@ -21,9 +31,11 @@ export const TodoItem = ({ todoText, todoId }: TodoItemProps) => {
         name="done"
         checked={done}
         defaultChecked={done}
-        onChange={(e) => setDone(e.target.checked)}
+        onChange={handleToggleTodoState(todoId)}
       />
-      <TodoText done={done} onClick={() => setDone(prev => !prev)}>{todoText}</TodoText>
+      <TodoText done={done} onClick={handleToggleTodoState(todoId)}>
+        {todoText}
+      </TodoText>
       <TrashButton type="button" onClick={handleDeleteTodo(todoId)}>
         <Trash color="red" size={20} />
       </TrashButton>
