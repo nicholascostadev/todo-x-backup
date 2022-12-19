@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
   min-height: 100vh;
   width: ${({ theme }) => theme.width.base};
-  margin: 24px auto;
+  margin: 80px auto;
   color: white;
 
   display: grid;
