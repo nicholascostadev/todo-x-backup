@@ -4,6 +4,9 @@ import { Container } from './styles'
 const Todos = dynamic(() => import('../../components/Todos'), {
   ssr: false,
 })
+const DoneTodos = dynamic(() => import('../../components/DoneTodos'), {
+  ssr: false,
+})
 
 export default function TodosPage() {
   return (
@@ -11,7 +14,7 @@ export default function TodosPage() {
       <Header />
       <Container>
         <Todos />
-        <div></div>
+        <DoneTodos />
       </Container>
     </>
   )
