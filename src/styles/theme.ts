@@ -7,14 +7,17 @@ export const theme = {
     gray500: '#6B7280',
 
     slate700: '#334155',
+    slate800: '#1e293b',
 
     indigo700: '#4338CA',
+    indigo800: '#3730a3',
   },
   fontSize: {
     sm: '0.75rem',
     md: '1rem',
     lg: '1.5rem',
-    xl: '2.5rem',
+    xl: '2rem',
+    '2xl': '2.5rem',
   },
   rounded: {
     sm: '8px',
