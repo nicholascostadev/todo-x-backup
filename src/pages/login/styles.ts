@@ -34,17 +34,14 @@ export const Form = styled.form`
   background-color: ${({ theme }) => theme.colors.slate800};
   padding: 1rem;
   min-width: 450px;
-
-  * {
-    background-color: inherit;
-    color: ${({ theme }) => theme.colors.gray200};
-  }
+  color: ${({ theme }) => theme.colors.gray200};
 
   h2 {
-    font-size: ${({ theme }) => theme.fontSize.xl};
     text-align: center;
-    margin-bottom: 0.5rem;
+    font-size: ${({ theme }) => theme.fontSize.xl};
     text-transform: uppercase;
+
+    margin-bottom: 0.5rem;
   }
 
   label {
@@ -58,14 +55,14 @@ export const Form = styled.form`
     background: transparent;
 
     > div {
-      border: 1px solid ${({ theme }) => theme.colors.gray200};
       height: 1px;
+      border: 1px solid ${({ theme }) => theme.colors.gray200};
     }
 
     > p {
-      text-align: center;
-      font-size: ${({ theme }) => theme.fontSize.md};
       color: ${({ theme }) => theme.colors.gray200};
+      font-size: ${({ theme }) => theme.fontSize.md};
+      text-align: center;
     }
 
     * {
@@ -78,6 +75,7 @@ export const Form = styled.form`
     border: 0;
     font-size: ${({ theme }) => theme.fontSize.md};
     color: ${({ theme }) => theme.colors.gray200};
+
     cursor: pointer;
 
     &[type='submit'] {
@@ -92,16 +90,17 @@ export const Form = styled.form`
     }
 
     &[name='google'] {
-      background-color: #db4437;
-      padding: 0.5rem 1rem;
-      transition: background-color 0.5s ease-out;
-      border-radius: ${({ theme }) => theme.rounded.full};
-
       display: flex;
       align-items: center;
       justify-content: center;
-
       gap: 0.5rem;
+
+      background-color: #db4437;
+      border-radius: ${({ theme }) => theme.rounded.full};
+
+      padding: 0.5rem 1rem;
+
+      transition: background-color 0.5s ease-out;
 
       svg {
         background-color: transparent;
@@ -110,6 +109,7 @@ export const Form = styled.form`
 
       &:hover {
         background-color: #db4440;
+
         padding: 0.5rem 1rem;
       }
     }
