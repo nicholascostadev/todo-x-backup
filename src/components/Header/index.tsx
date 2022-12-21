@@ -1,18 +1,25 @@
+import { useUserStore } from '../../store/useLogin'
 import { Container, ProfileButton } from './styles'
 
-export const Header = () => {
+const Header = () => {
+  const { user } = useUserStore()
   return (
     <Container>
       <div>
         <h1>TODO APP</h1>
 
-        <ProfileButton>
-          <img
-            src="https://github.com/nicholascostadev.png"
-            alt="Profile image"
-          />
-        </ProfileButton>
+        <div>
+          <p>{user.email}</p>
+          <ProfileButton>
+            <img
+              src="https://github.com/nicholascostadev.png"
+              alt="Profile image"
+            />
+          </ProfileButton>
+        </div>
       </div>
     </Container>
   )
 }
+
+export default Header

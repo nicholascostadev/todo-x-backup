@@ -18,6 +18,12 @@ export const Container = styled.div`
     @media (max-width: 768px) {
       padding: 0 1rem;
     }
+
+    > div {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
   }
 `
 
