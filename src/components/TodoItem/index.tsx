@@ -1,5 +1,4 @@
 import { Trash } from 'phosphor-react'
-import { useState } from 'react'
 import { useTodosStore } from '../../store/useTodos'
 import { ListItem, TodoText, TrashButton } from './styles'
 
@@ -29,7 +28,6 @@ export const TodoItem = ({ todoText, todoId }: TodoItemProps) => {
       <input
         type="checkbox"
         name="done"
-        checked={done}
         defaultChecked={done}
         onChange={handleToggleTodoState(todoId)}
       />
