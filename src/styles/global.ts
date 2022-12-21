@@ -6,7 +6,11 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
-    background-color: ${({theme}) => theme.colors.bg}
+    
+  }
+
+  body {
+    background-color: ${({ theme }) => theme.colors.bg}
   }
 `
 
