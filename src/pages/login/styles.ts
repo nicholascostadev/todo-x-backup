@@ -19,7 +19,10 @@ export const FormContainer = styled.div`
 
   padding: 0 10rem;
 
-  background-color: ${({ theme }) => theme.colors.indigo800};
+  background: linear-gradient(
+    to right,
+    ${({ theme }) => `${theme.colors.bg}, ${theme.colors.indigo800}`}
+  );
 `
 
 export const Form = styled.form`
