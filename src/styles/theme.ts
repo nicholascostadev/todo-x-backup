@@ -11,6 +11,8 @@ export const theme = {
 
     indigo700: '#4338CA',
     indigo800: '#3730a3',
+
+    red500: "#ef4444"
   },
   fontSize: {
     sm: '0.75rem',
