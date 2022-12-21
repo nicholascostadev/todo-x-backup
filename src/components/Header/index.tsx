@@ -1,4 +1,4 @@
-import { useUserStore } from '../../store/useLogin'
+import { useUserStore } from '../../store/useUser'
 import { Container, ProfileButton } from './styles'
 
 const Header = () => {
