@@ -5,7 +5,7 @@ export const Container = styled.div`
 
   > div {
     height: ${({ theme }) => theme.sizes.header};
-    width: 1200px;
+    width: ${({ theme }) => theme.width.base};
     max-width: 100%;
     margin: 0 auto;
 
@@ -35,6 +35,8 @@ export const ProfileButton = styled.button`
   border: 0;
   background: none;
   cursor: pointer;
+
+  position: relative;
 
   > img {
     max-width: 100%;

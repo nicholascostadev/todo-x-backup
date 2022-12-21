@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { useUserStore } from '../../store/useUser'
 import { Container, ProfileButton } from './styles'
 
@@ -11,9 +12,10 @@ const Header = () => {
         <div>
           <p>{user.email}</p>
           <ProfileButton>
-            <img
+            <Image
               src="https://github.com/nicholascostadev.png"
               alt="Profile image"
+              fill
             />
           </ProfileButton>
         </div>
