@@ -32,6 +32,13 @@ export const theme = {
     header: '70px',
     footer: '40px',
   },
+  screenSize: {
+    'sm-md': '950px',
+  },
+} as const
+
+export const device = {
+  mobileSmMd: `(max-width: ${theme.screenSize['sm-md']})`,
 } as const
 
 export type ThemeType = typeof theme

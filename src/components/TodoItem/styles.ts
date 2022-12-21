@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { device } from '../../styles/theme'
 
 export const ListItem = styled.li`
   list-style: none;
@@ -12,6 +13,9 @@ export const ListItem = styled.li`
     padding: 0 0.5rem;
     flex: 1;
     color: ${({ theme }) => theme.colors.gray200};
+  @media ${device.mobileSmMd} {
+    width: 100%;
+    max-width: 100%;
   }
 `
 

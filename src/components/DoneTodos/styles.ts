@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { device } from '../../styles/theme'
 
 export const Container = styled.aside`
   ul {
@@ -16,6 +17,9 @@ export const Container = styled.aside`
     svg {
       color: ${({ theme }) => theme.colors.gray400};
     }
+  }
+  @media ${device.mobileSmMd} {
+    padding: 0 1rem;
   }
 `
 
