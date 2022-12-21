@@ -1,6 +1,13 @@
 import styled from 'styled-components'
+import { device } from '../../styles/theme'
 
-export const Container = styled.div``
+export const Container = styled.div`
+  max-width: 100%;
+
+  @media ${device.mobileSmMd} {
+    padding: 0 1rem;
+  }
+`
 
 export const Input = styled.input`
   background: transparent;
@@ -13,6 +20,10 @@ export const Input = styled.input`
 
   &::placeholder {
     color: ${({ theme }) => theme.colors.gray400};
+  }
+
+  @media ${device.mobileSmMd} {
+    width: 100%;
   }
 `
 
