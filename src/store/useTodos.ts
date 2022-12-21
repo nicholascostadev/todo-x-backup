@@ -36,7 +36,11 @@ export const useTodosStore = create(
       },
       toggleTodoDoneState: (todoId) => {
         set((state) => {
+          // check to see if current action is to toggle todo as Done or undo,
+          // making it to the todo list again
           const todoToUndo = state.doneTodos.find((todo) => todo.id === todoId)
+
+          // is undoing
           if (todoToUndo) {
             return {
               doneTodos: state.doneTodos.filter((todo) => todo.id !== todoId),
@@ -44,8 +48,8 @@ export const useTodosStore = create(
             }
           }
 
+          // is not undoing
           const doneTodo = state.todos.find((todo) => todo.id === todoId)
-
           if (!doneTodo) return state
 
           return {
