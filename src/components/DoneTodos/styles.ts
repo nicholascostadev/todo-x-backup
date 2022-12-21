@@ -92,6 +92,7 @@ export const CollapsibleContent = styled.ul<CollapsibleContentProps>`
 export const CollapsibleTitle = styled.button`
   border: 0;
   cursor: pointer;
+  background-color: inherit;
   font-size: ${({ theme }) => theme.fontSize.lg};
   color: white;
 
