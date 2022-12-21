@@ -4,5 +4,5 @@ export const Container = styled.div`
   width: ${({ theme }) => theme.width.base};
   margin: 0 auto;
   display: grid;
-  grid-template-columns: .2fr .8fr;
+  grid-template-columns: 0.2fr 0.8fr;
 `

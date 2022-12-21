@@ -35,7 +35,7 @@ export const Form = styled.form`
   padding: 1rem;
   min-width: 450px;
 
-color: ${({ theme }) => theme.colors.gray200};
+  color: ${({ theme }) => theme.colors.gray200};
 
   h2 {
     font-size: ${({ theme }) => theme.fontSize.xl};

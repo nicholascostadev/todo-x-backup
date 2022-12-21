@@ -23,4 +23,5 @@ export const InputWrapper = styled.input<InputProps>`
 `
 
 export const InputError = styled.span`
-  color: ${({ theme }) => theme.colors.red500}; `
+  color: ${({ theme }) => theme.colors.red500};
+`
