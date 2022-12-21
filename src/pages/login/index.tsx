@@ -5,6 +5,8 @@ import { z } from 'zod'
 import { Container, Form, FormContainer, ImageContainer } from './styles'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Input } from '../../components/Input'
+import { useUserStore } from '../../store/useLogin'
+import Router from 'next/router'
 
 const loginSchema = z.object({
   email: z.string().min(1, 'Email é obrigatório').email('Email inválido'),
@@ -21,9 +23,19 @@ export default function LoginPage() {
   } = useForm<Login>({
     resolver: zodResolver(loginSchema),
   })
+
+  const { createUser } = useUserStore()
   const handleFormSubmit = (data: Login) => {
     // no server currently
-    return data
+    try {
+      createUser(data.email)
+      Router.push('/todos')
+      return data
+    } catch (err) {
+      console.log(err)
+
+      return data
+    }
   }
   return (
     <Container>

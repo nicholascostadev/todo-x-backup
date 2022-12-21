@@ -10,7 +10,7 @@ type User = {
 
 type UserStore = {
   user: User
-  createUser: (email: User['email']) => void
+  login: (email: User['email']) => void
 }
 
 const emailSchema = z.string().min(1).email()
@@ -22,7 +22,7 @@ export const useUserStore = create(
         email: '',
         createdAt: null,
       },
-      createUser: (email) => {
+      login: (email) => {
         set(() => ({
           user: {
             email: emailSchema.parse(email),
