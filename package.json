@@ -8,12 +8,15 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.9.10",
     "next": "latest",
     "phosphor-react": "^1.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.41.0",
     "react-is": "^18.2.0",
     "styled-components": "^5.3.6",
+    "zod": "^3.20.2",
     "zustand": "^4.1.5"
   },
   "devDependencies": {
