@@ -30,6 +30,7 @@ export const theme = {
   },
   sizes: {
     header: '70px',
+    footer: '40px',
   },
 } as const
 

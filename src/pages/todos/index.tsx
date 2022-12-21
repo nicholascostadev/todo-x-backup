@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic'
 import Router from 'next/router'
 import { useEffect } from 'react'
 import { MoonLoader } from 'react-spinners'
+import { Footer } from '../../components/Footer'
 import { useUserStore } from '../../store/useUser'
 import { Container } from './styles'
 
@@ -41,6 +42,7 @@ export default function TodosPage() {
         <Todos />
         <DoneTodos />
       </Container>
+      <Footer />
     </>
   )
 }
