@@ -2,15 +2,9 @@ import Image from 'next/image'
 import { GoogleLogo } from 'phosphor-react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
-import {
-  Container,
-  Form,
-  FormContainer,
-  FormError,
-  FormInput,
-  ImageContainer,
-} from './styles'
+import { Container, Form, FormContainer, ImageContainer } from './styles'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { Input } from '../../components/Input'
 
 const loginSchema = z.object({
   email: z.string().min(1, 'Email é obrigatório').email('Email inválido'),
@@ -44,23 +38,21 @@ export default function LoginPage() {
         <Form onSubmit={handleSubmit(handleFormSubmit)}>
           <h2>Login</h2>
           <label htmlFor="email">Email</label>
-          <FormInput
-            type="text"
+          <Input
+            type="email"
             placeholder="email@exemplo.com"
             id="email"
-            error={!!errors.email}
+            error={errors.email}
             {...register('email')}
           />
-          <FormError>{errors.email?.message}</FormError>
           <label htmlFor="password">Senha</label>
-          <FormInput
-            type="text"
+          <Input
+            type="password"
             placeholder="Senha"
             id="password"
-            error={!!errors.password}
+            error={errors.password}
             {...register('password')}
           />
-          <FormError>{errors.password?.message}</FormError>
           <button type="submit">Entrar</button>
           <div>
             <div />
