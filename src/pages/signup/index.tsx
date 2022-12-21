@@ -2,12 +2,7 @@ import Image from 'next/image'
 import { GoogleLogo } from 'phosphor-react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
-import {
-  Container,
-  Form,
-  FormContainer,
-  ImageContainer,
-} from './styles'
+import { Container, Form, FormContainer, ImageContainer } from './styles'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Input } from '../../components/Input'
 
