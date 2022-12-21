@@ -18,6 +18,7 @@ export const Container = styled.aside`
       color: ${({ theme }) => theme.colors.gray400};
     }
   }
+
   @media ${device.mobileSmMd} {
     padding: 0 1rem;
   }
@@ -42,6 +43,7 @@ export const DoneTodoItem = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
+    gap: .5rem;
 
   cursor: pointer;
 
@@ -63,6 +65,17 @@ export const DoneTodoItem = styled.li`
     color: ${({ theme }) => theme.colors.gray400};
 
     flex: 1;
+
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    word-break: break-word;
+
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
   }
 
   &:hover {
@@ -80,6 +93,10 @@ export const DoneTodoItem = styled.li`
         color: ${({ theme }) => theme.colors.indigo700};
       }
     }
+  }
+
+  @media ${device.mobileSmMd} {
+    width: 100%;
   }
 `
 
