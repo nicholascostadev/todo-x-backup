@@ -21,6 +21,6 @@ Initial ideas for features to the project
 - [x] Login page(still with no server)
 - [x] Signup page(still with no server)
 - [ ] Register(fake register to begin with)
-- [ ] Login(fake login to begin with)
+- [x] Login(fake login to begin with)
 - [ ] Profile page(fake auth with localstorage)
 - [ ] When server is ready: Transfer everything from local to server
