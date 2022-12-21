@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic'
+import Head from 'next/head'
 import Router from 'next/router'
 import { useEffect } from 'react'
 import { MoonLoader } from 'react-spinners'
@@ -37,6 +38,9 @@ export default function TodosPage() {
 
   return (
     <>
+      <Head>
+        <title>My Todos</title>
+      </Head>
       <Header />
       <Container>
         <Todos />

@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
@@ -7,5 +8,12 @@ const Wrapper = styled.div`
 `
 
 export default function Home() {
-  return <Wrapper>Hello World</Wrapper>
+  return (
+    <>
+      <Head>
+        <title>Home Page</title>
+      </Head>
+      <Wrapper>Hello World</Wrapper>
+    </>
+  )
 }

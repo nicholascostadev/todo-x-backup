@@ -5,6 +5,7 @@ import { z } from 'zod'
 import { Container, Form, FormContainer, ImageContainer } from './styles'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Input } from '../../components/Input'
+import Head from 'next/head'
 
 const SignupSchema = z
   .object({
@@ -37,53 +38,58 @@ export default function SignupPage() {
     return data
   }
   return (
-    <Container>
-      <ImageContainer>
-        <Image
-          src="/todo-illustration.svg"
-          alt="Mulher confirmando tarefas completas"
-          fill
-        />
-      </ImageContainer>
-      <FormContainer>
-        <Form onSubmit={handleSubmit(handleFormSubmit)}>
-          <h2>Registrar</h2>
-          <label htmlFor="email">Email</label>
-          <Input
-            type="email"
-            placeholder="email@exemplo.com"
-            id="email"
-            error={errors.email}
-            {...register('email')}
+    <>
+      <Head>
+        <title>Registrar</title>
+      </Head>
+      <Container>
+        <ImageContainer>
+          <Image
+            src="/todo-illustration.svg"
+            alt="Mulher confirmando tarefas completas"
+            fill
           />
-          <label htmlFor="password">Senha</label>
-          <Input
-            type="password"
-            placeholder="Senha"
-            id="password"
-            error={errors.password}
-            {...register('password')}
-          />
-          <label htmlFor="confirmPassword">Confirmar senha</label>
-          <Input
-            type="password"
-            placeholder="Confirmação de senha"
-            id="confirmPassword"
-            error={errors.confirmPassword}
-            {...register('confirmPassword')}
-          />
-          <button type="submit">Registrar</button>
-          <div>
-            <div />
-            <p>OU</p>
-            <div />
-          </div>
-          <button type="button" name="google">
-            <GoogleLogo />
-            Entrar com o Google
-          </button>
-        </Form>
-      </FormContainer>
-    </Container>
+        </ImageContainer>
+        <FormContainer>
+          <Form onSubmit={handleSubmit(handleFormSubmit)}>
+            <h2>Registrar</h2>
+            <label htmlFor="email">Email</label>
+            <Input
+              type="email"
+              placeholder="email@exemplo.com"
+              id="email"
+              error={errors.email}
+              {...register('email')}
+            />
+            <label htmlFor="password">Senha</label>
+            <Input
+              type="password"
+              placeholder="Senha"
+              id="password"
+              error={errors.password}
+              {...register('password')}
+            />
+            <label htmlFor="confirmPassword">Confirmar senha</label>
+            <Input
+              type="password"
+              placeholder="Confirmação de senha"
+              id="confirmPassword"
+              error={errors.confirmPassword}
+              {...register('confirmPassword')}
+            />
+            <button type="submit">Registrar</button>
+            <div>
+              <div />
+              <p>OU</p>
+              <div />
+            </div>
+            <button type="button" name="google">
+              <GoogleLogo />
+              Entrar com o Google
+            </button>
+          </Form>
+        </FormContainer>
+      </Container>
+    </>
   )
 }

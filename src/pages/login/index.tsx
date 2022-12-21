@@ -7,6 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { Input } from '../../components/Input'
 import { useUserStore } from '../../store/useUser'
 import Router from 'next/router'
+import Head from 'next/head'
 
 const loginSchema = z.object({
   email: z.string().min(1, 'Email é obrigatório').email('Email inválido'),
@@ -38,45 +39,50 @@ export default function LoginPage() {
     }
   }
   return (
-    <Container>
-      <ImageContainer>
-        <Image
-          src="/todo-illustration.svg"
-          alt="Mulher confirmando tarefas completas"
-          fill
-        />
-      </ImageContainer>
-      <FormContainer>
-        <Form onSubmit={handleSubmit(handleFormSubmit)}>
-          <h2>Login</h2>
-          <label htmlFor="email">Email</label>
-          <Input
-            type="email"
-            placeholder="email@exemplo.com"
-            id="email"
-            error={errors.email}
-            {...register('email')}
+    <>
+      <Head>
+        <title>Login</title>
+      </Head>
+      <Container>
+        <ImageContainer>
+          <Image
+            src="/todo-illustration.svg"
+            alt="Mulher confirmando tarefas completas"
+            fill
           />
-          <label htmlFor="password">Senha</label>
-          <Input
-            type="password"
-            placeholder="Senha"
-            id="password"
-            error={errors.password}
-            {...register('password')}
-          />
-          <button type="submit">Entrar</button>
-          <div>
-            <div />
-            <p>OU</p>
-            <div />
-          </div>
-          <button type="button" name="google">
-            <GoogleLogo />
-            Entrar com o Google
-          </button>
-        </Form>
-      </FormContainer>
-    </Container>
+        </ImageContainer>
+        <FormContainer>
+          <Form onSubmit={handleSubmit(handleFormSubmit)}>
+            <h2>Login</h2>
+            <label htmlFor="email">Email</label>
+            <Input
+              type="email"
+              placeholder="email@exemplo.com"
+              id="email"
+              error={errors.email}
+              {...register('email')}
+            />
+            <label htmlFor="password">Senha</label>
+            <Input
+              type="password"
+              placeholder="Senha"
+              id="password"
+              error={errors.password}
+              {...register('password')}
+            />
+            <button type="submit">Entrar</button>
+            <div>
+              <div />
+              <p>OU</p>
+              <div />
+            </div>
+            <button type="button" name="google">
+              <GoogleLogo />
+              Entrar com o Google
+            </button>
+          </Form>
+        </FormContainer>
+      </Container>
+    </>
   )
 }
