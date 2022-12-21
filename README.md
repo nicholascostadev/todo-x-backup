@@ -1,4 +1,31 @@
-# Docs are still being written...
+# Docs 
+
+Docs are still being written, don't expect to have everything documented yet, if you want to help with anything, even the docs, feel free to do so by following the [How to contribute](#how-to-contribute) guide.
+
+## How to contribute
+
+For contributing, you'll first need to follow the [How to run it locally](#how-to-run-it-locally) tutorial if you don't know how to, and then create a branch like: "feat/new-feature", by "new-feature" meaning simple keywords to the new feature.
+
+After making all your changes on the new branch, create a PR and explain your changes briefly, no need right now for any PR template.
+
+_**PS**: Make sure to lint everything before you create the PR, PRs with linting issues will not be accepted_.
+
+
+## How to run it locally
+
+```bash
+# Clone the repo
+git clone https://github.com/nicholascostadev/todo-x.git
+
+# cd to folder
+cd todo-x
+
+# install dependencies
+npm install
+
+# run the development server
+npm run dev
+```
 
 ##  Ideas
 
