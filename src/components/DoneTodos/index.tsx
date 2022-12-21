@@ -11,10 +11,11 @@ import {
 
 export default function DoneTodos() {
   const [collapsed, setCollapsed] = useState(true)
-  const doneTodos = useTodosStore((state) => state.doneTodos)
-  const toggleTodoDoneState = useTodosStore(
-    (state) => state.toggleTodoDoneState,
-  )
+
+  const { doneTodos, toggleTodoDoneState } = useTodosStore((state) => ({
+    doneTodos: state.doneTodos,
+    toggleTodoDoneState: state.toggleTodoDoneState,
+  }))
 
   const recoverTodo = (todoId: string) => () => {
     toggleTodoDoneState(todoId)

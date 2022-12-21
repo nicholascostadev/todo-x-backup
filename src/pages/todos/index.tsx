@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import Router from 'next/router'
 import { useEffect } from 'react'
-import { BarLoader, MoonLoader } from 'react-spinners'
+import { MoonLoader } from 'react-spinners'
 import { useUserStore } from '../../store/useUser'
 import { Container } from './styles'
 
@@ -26,7 +26,7 @@ const DoneTodos = dynamic(() => import('../../components/DoneTodos'), {
 })
 
 export default function TodosPage() {
-  const { user } = useUserStore()
+  const { user } = useUserStore((state) => ({ user: state.user }))
 
   useEffect(() => {
     if (!user.email) {

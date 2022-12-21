@@ -7,10 +7,12 @@ type TodoItemProps = {
   todoId: string
 }
 export const TodoItem = ({ todoText, todoId }: TodoItemProps) => {
-  const deleteTodo = useTodosStore((state) => state.deleteTodo)
-  const doneTodos = useTodosStore((state) => state.doneTodos)
-  const toggleTodoDoneState = useTodosStore(
-    (state) => state.toggleTodoDoneState,
+  const { deleteTodo, doneTodos, toggleTodoDoneState } = useTodosStore(
+    (state) => ({
+      deleteTodo: state.deleteTodo,
+      doneTodos: state.doneTodos,
+      toggleTodoDoneState: state.toggleTodoDoneState,
+    }),
   )
 
   const done = doneTodos.findIndex((todo) => todo.id === todoId) !== -1
