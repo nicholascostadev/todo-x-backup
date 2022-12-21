@@ -43,7 +43,7 @@ export const DoneTodoItem = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
-    gap: .5rem;
+  gap: 0.5rem;
 
   cursor: pointer;
 

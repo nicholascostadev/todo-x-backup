@@ -10,7 +10,7 @@ export const ListItem = styled.li`
   display: flex;
   align-items: center;
 
-    gap: .5rem;
+  gap: 0.5rem;
 
   p {
     padding: 0 0.5rem;
