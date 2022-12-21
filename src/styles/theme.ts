@@ -28,6 +28,9 @@ export const theme = {
   width: {
     base: '1200px',
   },
+  sizes: {
+    header: '70px',
+  },
 } as const
 
 export type ThemeType = typeof theme

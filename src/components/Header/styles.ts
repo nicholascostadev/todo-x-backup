@@ -4,7 +4,7 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.bg};
 
   > div {
-    height: 70px;
+    height: ${({ theme }) => theme.sizes.header};
     width: 1200px;
     max-width: 100%;
     margin: 0 auto;
