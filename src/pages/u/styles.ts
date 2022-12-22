@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { device } from '../../styles/theme'
 
 export const Container = styled.div`
   width: ${({ theme }) => theme.width.base};
