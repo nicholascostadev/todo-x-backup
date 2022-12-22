@@ -1,8 +1,18 @@
 import styled from 'styled-components'
+import { device } from '../../styles/theme'
 
 export const Container = styled.div`
   width: ${({ theme }) => theme.width.base};
-  margin: 0 auto;
+  max-width: 100%;
+
+  margin: 5rem auto;
+
   display: grid;
-  grid-template-columns: 0.2fr 0.8fr;
+  gap: 5rem;
+  grid-template-columns: 0.35fr 1fr;
+  justify-content: center;
+
+  @media (max-width: 620px) {
+    grid-template-columns: 1fr;
+  }
 `

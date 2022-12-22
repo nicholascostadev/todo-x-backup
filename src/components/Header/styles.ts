@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  background-color: ${({ theme }) => theme.colors.bg};
-
   > div {
     height: ${({ theme }) => theme.sizes.header};
     width: ${({ theme }) => theme.width.base};
@@ -13,7 +11,7 @@ export const Container = styled.div`
     justify-content: space-between;
     align-items: center;
 
-    color: white;
+    color: ${({ theme }) => theme.colors.gray50};
 
     @media (max-width: 768px) {
       padding: 0 1rem;
